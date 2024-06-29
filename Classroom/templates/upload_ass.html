@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studentpage</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  
+  font-family: "Poppins", sans-serif;
+  
+}
+body{
+    background-image: url("static/translate.jpg");
+    font-weight: bold;
+    background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh; 
+}
+    .container {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    height: 100vh;
+}
+
+.input-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.output-section {
+    width: calc(100% - 22px);
+    height: 150px;
+    flex: 1;
+    padding: 10px;
+    
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.9); 
+}
+
+textarea {
+    width: calc(100% - 22px);
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    border: none;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.9); 
+    font-weight: bold;
+}
+
+select {
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 10px;
+    border:none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: #0056b3;
+}
+
+.result {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+    width: fit-content;
+    text-align: center; /* Center text content */
+}
+
+header {
+    background-color: rgba(22, 34, 57, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    box-shadow: 0 0 25px 0 black;
+}
+.container1 {
+            position: fixed;
+            top: 25px;
+            right: 50px;
+        }
+
+        .container1 a {
+         
+    padding: 10px 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: white;
+    border: 2px solid transparent;
+    transition: all 0.5s;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.container1 a:hover,
+.container1 a:active {
+    border: 2px solid #f5a425;
+
+}
+.container h1{
+    position: fixed;
+    top: 200px;
+    text-align: center;
+    color: coral;
+}
+.container1 h1{
+            position: fixed;
+            top: 10px;
+            left: 50px;
+            font-size: 36px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #fff;
+        }
+        em {
+    font-style: normal;
+    color: #f5a425;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+    
+        <nav>
+    <div class="container1">
+        <h1>
+            <em>Student</em>
+            Room
+        </h1>
+    <a href="/index">Logout</a>
+    <a href="/studentview">Classroom</a>
+    </div>
+        </nav>
+    </header>
+<div class="container">
+    <h1>Language Translator</h1>
+<div class="input-section">
+<form action="/convert" method="post">
+    <label style="color: #f5a425;">Select Language:</label>
+    <select id="selectlang" name="lang">
+        <option value="0">Tamil</option>
+        <option value="1">English</option>
+        <option value="2">Telugu</option>
+        <option value="3">Kannada</option>
+        <option value="4">Malayalam</option>
+        <option value="5">Hindi</option>
+		<option value="6">Afrikaans</option>
+		<option value="7">Albanian</option>
+		<option value="8">Arabic</option>
+		<option value="9">Armenian</option>
+		<option value="10">Azerbaijani</option>
+		<option value="11">Basque</option>
+		<option value="12">Belarusian</option>
+		<option value="13">Bengali</option>
+		<option value="14">Bosnian</option>
+		<option value="15">Bulgarian</option>
+		<option value="16">Catalan</option>
+		<option value="17">Cebuano</option>
+		<option value="18">Chinese</option>
+		<option value="19">Corsican</option>
+		<option value="20">Croatian</option>
+		<option value="21">Czech</option>
+		<option value="22">Danish</option>
+		<option value="23">Dutch</option>
+		<option value="24">Esperanto</option>
+		<option value="25">Estonian</option>
+		<option value="26">Finnish</option>
+		<option value="27">French</option>
+		<option value="28">Frisian</option>
+		<option value="29">Galician</option>
+		<option value="30">Georgian</option>
+		<option value="31">German</option>
+		<option value="32">Greek</option>
+		<option value="33">Gujarati</option>
+		<option value="34">Haitian Creole</option>
+		<option value="35">Hausa</option>
+		<option value="36">Hawaiian</option>
+		<option value="37">Hebrew</option>
+		<option value="38">Hmong</option>
+		<option value="39">Hungarian</option>
+		<option value="40">Icelandic</option>
+		
+    </select>
+    <textarea id="msg" name="msg" 
+                       required> 
+            </textarea>
+    <label for="selectlang" style="color: #f5a425;">Convert to  language :</label>
+
+    <input type="submit" value="Process">
+</form>
+</div>
+    <div class="output-section">
+    <div class="result">
+    {{output}}
+  
+</div>
+</div>
+</div>
+
+    
+
+
+</body>
+</html>
